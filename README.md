@@ -14,14 +14,14 @@ This application is currently in development, when finished, the application wil
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://intense-coast-71162.herokuapp.com/)
 
 
 ### Setup
 
 - Clone this repo by rinning `git clone https://github.com/balerum03/Bookstore-React.git`
 - Then run `npm install` to install packages.
-- Run the server with `npm start`
+- Run the server with `npm run start`
 - The app will open on your default browser.
 
 
