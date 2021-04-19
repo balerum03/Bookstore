@@ -15,7 +15,7 @@ const BookForm = () => {
           </option>
         ))}
       </select>
-      <submit type="button" value="Submit" onclick={clickHandler}>Submit</submit>
+      <button type="button" value="Submit" onClick={clickHandler}>Submit</button>
     </form>
   );
 };
