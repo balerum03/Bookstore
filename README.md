@@ -1,5 +1,5 @@
 # BookStore - React & Redux.
->milestone 1.
+>milestone 2.
 
 This application is currently in development, when finished, the application will help users organized and manage their bookstores.
 
