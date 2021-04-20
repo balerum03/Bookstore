@@ -1,35 +1,31 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from '../components/Book';
-import PropTypes from 'prop-types';
+import {removeBook} from '../actions/index';
 
-const mapStateToProps = state => {
-  const { books } = state;
-  return { books };
+const BookList = () => {
+  const books = useSelector(state => state.books);
+  const dispatch = useDispatch();
+
+  const removeHandler = e => {
+    const id = parseFloat(e.target.value);
+    dispatch(removeBook(id));
+  }
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {books.map(book => <Book key={book.id} book={book} remove={removeHandler}/>)}
+      </tbody>
+    </table>
+  )
 };
 
-const BookList = ({books}) => (
-  <table>
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Category</th>
-      </tr>
-    </thead>
-    <tbody>
-      {books.map(book => <Book key={book.id} book={book}/>)}
-    </tbody>
-  </table>
-);
-
-BookList.propTypes = {
-  books: PropTypes.objectOf(PropTypes.object).isRequired,
-};
-
-const BooksList = connect(
-  mapStateToProps,
-  null,
-)(BookList);
-
-export default BooksList;
+export default BookList;
