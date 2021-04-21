@@ -1,15 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Fragment } from 'react';
 
 const Book = props => {
 	const {book, remove} = props;
 	return (
-		<tr key={book.id}>
-			<td>{book.id}</td>
-			<td>{book.title}</td>
-			<td>{book.category}</td>
+		<Fragment>
+			<tr key={book.id}>
+				<td>{book.id}</td>
+				<td>{book.title}</td>
+				<td>{book.category}</td>
+			</tr>
 			<button type='button' onClick={remove} value={book.id}>Remove</button>
-		</tr>
+		</Fragment>
 	)
 };
 

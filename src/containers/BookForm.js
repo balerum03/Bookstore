@@ -23,16 +23,17 @@ const BookForm = ({ categories }) => {
       title,
       category,
     }));
-    setTitle('');
-    setCategory('');
+    setTitle({value:''});
+    setCategory({value:''});
   };
 
   return(
     <div className="book-form">
       <h3 className="title">ADD NEW BOOK</h3>
       <form onSubmit={submitHandler}>
-        <input type="text" onChange={titleHandler} value={title.value} />
-        <select onChange={categoryHandler} value={category.value}>
+        <input type="text" required onChange={titleHandler} value={title.value} />
+        <select required onChange={categoryHandler} value={category.value}>
+          <option value="">Category</option>
           {categories.map(category => (
             <option key={category}>
               {' '}
