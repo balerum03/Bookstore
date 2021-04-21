@@ -20,7 +20,7 @@ const BookForm = () => {
   const submitHandler = e => {
     e.preventDefault();
     dispatch(createBook({
-      id: parseInt(Date.now()),
+      id: Math.floor(Math.random() * 100),
       title,
       category,
     }));
