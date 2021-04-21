@@ -8,7 +8,7 @@ const Book = props => {
 			<td>{book.id}</td>
 			<td>{book.title}</td>
 			<td>{book.category}</td>
-			<button type='button' value={book.id} onClick={remove}>Remove</button>
+			<button type='button' onClick={remove} value={book.id}>Remove</button>
 		</tr>
 	)
 };

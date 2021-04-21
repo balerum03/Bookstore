@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {createBook} from '../actions/index';
+import PropTypes from 'prop-types';
 
-const categories = ["Action", "Biography", "History", "Horror", "Kids", "Learning", "Sci-Fi"];
-
-const BookForm = () => {
+const BookForm = ({ categories }) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
@@ -20,7 +19,7 @@ const BookForm = () => {
   const submitHandler = e => {
     e.preventDefault();
     dispatch(createBook({
-      id: parseInt(Date.now()),
+      id: Math.floor(Math.random() * 100),
       title,
       category,
     }));
@@ -31,7 +30,7 @@ const BookForm = () => {
   return(
     <form onSubmit={submitHandler}> 
       <input type="text" onChange={titleHandler} value={title.value} />
-      <select name="categories" onChange={categoryHandler} value={category.value}>
+      <select onChange={categoryHandler} value={category.value}>
         {categories.map(category => (
           <option key={category}>
             {' '}
@@ -39,9 +38,17 @@ const BookForm = () => {
           </option>
         ))}
       </select>
-      <button type="button" value="Submit">Submit</button>
+      <button type="submit">Submit</button>
     </form>
   );
+};
+
+BookForm.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.string),
+};
+
+BookForm.defaultProps = {
+  categories: [],
 };
 
 export default BookForm;
