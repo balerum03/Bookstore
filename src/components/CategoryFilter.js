@@ -5,9 +5,9 @@ const CategoryFilter = ({ handleFilterChange, categories }) => {
   return(
     <select onChange={handleFilterChange}>
       <option value='all'>All</option>
-      {categories.map(category => {
+      {categories.map(category => (
         <option key={category} >{category}</option>
-      })}
+      ))}
     </select>
   );
 }
