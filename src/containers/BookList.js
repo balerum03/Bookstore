@@ -20,7 +20,7 @@ const BookList = ({ categories }) => {
   }
 
   const bookFilter = () => {
-    if(filter !== 'all'){
+    if(filter !== 'All'){
       return books.filter(book => book.category === filter);
     } else {
       return books;
@@ -28,19 +28,13 @@ const BookList = ({ categories }) => {
   }
 
   return (
-    <div>
-      <CategoryFilter categories={categories} handleFilterChange={handleFilterChange}/>
+    <div className="book-list">
+      <div className="filter">
+        <p className="filter-title">Filter</p>
+        <CategoryFilter categories={categories} handleFilterChange={handleFilterChange}/>
+      </div>
       <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
           {bookFilter().map(book => <Book key={book.id} book={book} remove={removeHandler}/>)}
-        </tbody>
       </table>
     </div>
   )
