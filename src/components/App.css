@@ -29,7 +29,6 @@ ul {
 
 .Bookstore-CMS {
   text-align: center;
-  width: 40%;
   height: 37px;
   font-size: 2rem;
   font-weight: bold;
@@ -92,8 +91,8 @@ form {
   border-color: rgb(255, 255, 255);
   margin: 0.5rem;
   padding: 0.5rem;
-  width: 7rem;
-  height: 2.5rem;
+  width: 15rem;
+  height: 3rem;
   border-radius: 10px;
   color: white;
 }
@@ -104,7 +103,7 @@ form {
 
 .book {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 80%;
   height: auto;
   padding: 32px 147px 26px 27px;
@@ -114,7 +113,7 @@ form {
 }
 
 .book-info {
-  width: 80%;
+  width: 50%;
   display: flex;
   flex-direction: column;
 }
@@ -125,8 +124,13 @@ form {
   color: black;
 }
 
-.book-category {
+.book-author {
   color: #4386bf;
+}
+
+.book-category {
+  font-weight: bold;
+  color: var(--black-two);
 }
 
 tbody {
@@ -151,7 +155,7 @@ tr {
 }
 
 .add-book {
-  width: 25%;
+  width: 65%;
   height: 3rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
@@ -163,4 +167,70 @@ tr {
   text-align: center;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
+}
+
+.book-actions {
+  width: 40%;
+  color: #4386bf;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+}
+
+.book-actions a {
+  cursor: pointer;
+}
+
+.remove-btn {
+  color: #4386bf;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.chapter-info {
+  color: rgb(116, 116, 116);
+  font-weight: 300;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+.chapter-number {
+  font-weight: 300;
+  font-size: 1rem;
+  color: black;
+  margin: 0.9rem 0 0 0.5rem;
+}
+
+.user-icon {
+  color: #0290ff;
+}
+
+.nav-title {
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-title a:hover {
+  color: darkgray;
+}
+
+.progress-number {
+  font-size: 2rem;
+}
+
+.completed-text {
+  font-size: 0.9rem;
+}
+
+.over-all-progress {
+  display: flex;
+  align-items: center;
 }
