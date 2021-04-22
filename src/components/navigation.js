@@ -10,7 +10,7 @@ const Navigation = () => (
             <a href="#">Books</a>
             <a href="#">Categories</a>
         </div>
-        <div>
+        <div className="profile-pic">
             <FontAwesomeIcon icon={faUserCircle} size="lg" className="user-icon"/>
         </div>
     </nav>
